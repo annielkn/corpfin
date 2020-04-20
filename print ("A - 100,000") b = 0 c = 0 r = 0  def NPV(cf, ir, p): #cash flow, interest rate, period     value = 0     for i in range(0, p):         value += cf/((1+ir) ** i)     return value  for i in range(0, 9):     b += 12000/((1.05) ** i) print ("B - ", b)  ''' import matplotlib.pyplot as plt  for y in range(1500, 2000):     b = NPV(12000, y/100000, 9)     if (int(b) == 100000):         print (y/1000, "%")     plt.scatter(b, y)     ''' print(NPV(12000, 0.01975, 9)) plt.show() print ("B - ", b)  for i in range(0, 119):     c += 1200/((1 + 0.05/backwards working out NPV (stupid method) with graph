@@ -1,0 +1,29 @@
+print ("A - 100,000")
+b = 0
+c = 0
+r = 0
+
+def NPV(cf, ir, p): #cash flow, interest rate, period
+    value = 0
+    for i in range(0, p):
+        value += cf / ((1+ir) ** i)
+    return value
+
+for i in range(0, 9):
+    b += 12000 / ((1.05) ** i)
+print ("B - ", b)
+
+'''
+import matplotlib.pyplot as plt 
+for y in range(1500, 2000):
+    b = NPV(12000, y/100000, 9)
+    if (int(b) == 100000):
+        print (y/1000, "%")
+    plt.scatter(b, y)
+    '''
+print(NPV(12000, 0.01975, 9))
+plt.show()
+print ("B - ", b) 
+for i in range(0, 119):
+    c += 1200 / ((1 + 0.05/12) ** i)
+print ("C - ", c)
